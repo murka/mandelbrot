@@ -100,7 +100,7 @@ fn write_image(filename: &str, pixels: &[u8], bounds: (usize, usize))
     -> Result<(), std::io::Error> {
     let output = File::create(filename)?;
     let encoder = PNGEncoder::new(output);
-    encoder.encode(&pixels, bounds.0 as u32, bounds.1 as u32, ColorType::Gray(8))?;
+    encoder.encode(&pixels, bounds.0 as u32, bounds.1 as u32, ColorType::Rgb8).ok();
     Ok(())
 }
 
@@ -142,7 +142,7 @@ fn main() {
                     render(band, band_bounds, band_upper_left, band_lower_right);
                 });
             }
-        });
+        }).ok();
     }
     
     write_image(&args[1], &pixels, bounds)

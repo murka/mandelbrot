@@ -2,12 +2,12 @@
 name = "mandelbrot"
 description = "A program for create Mandelbrot set image"
 license = "MIT"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Danil Shaymurzin <via@mrzn.org>"]
 keywords = ["complex", "math", "mandelbrot"]
 edition = "2018"
 
 [dependencies]
 num = "0.3"
-image = "0.13.0"
+image = "0.23.7"
 crossbeam = "0.7.3"
